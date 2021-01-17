@@ -130,8 +130,8 @@ export const CardSection = styled.div`
     width: 100%;
     height: fit-content;
     flex-flow: row wrap;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: center;
     min-height: 48.75rem;
     @media (max-width: ${MOBILE}) {
     width: 100%;
