@@ -25,8 +25,8 @@ export const getOffersAndFilter = (
     }
     result =
       result &&
-      offer.carGroupInfo.maxPassengers >= numberOfSeats
-      && offer.carGroupInfo.driverRequirements.minAge >= minAge;
+      offer.carGroupInfo.maxPassengers >= numberOfSeats &&
+      offer.carGroupInfo.driverRequirements.minAge >= minAge;
 
     return result;
   });
@@ -41,14 +41,22 @@ export const getOffersAndFilter = (
   } else if (orderBy === 'expensive') {
     sorted = filtered.sort(
       (offerA, offerB) =>
-        offerB.prices.dayPrice.amount.value - offerA.prices.dayPrice.amount.value
+        offerB.prices.dayPrice.amount.value -
+        offerA.prices.dayPrice.amount.value
     );
   } else if (orderBy === 'cheapest') {
     sorted = filtered.sort(
       (offerA, offerB) =>
-        offerA.prices.dayPrice.amount.value - offerB.prices.dayPrice.amount.value 
+        offerA.prices.dayPrice.amount.value -
+        offerB.prices.dayPrice.amount.value
     );
   }
 
-  return sorted;
-}; 
+  return sorted.map((offer) => ({
+    name: offer.carGroupInfo.modelExample.name,
+    image:
+      offer.carGroupInfo.modelExample.imageUrl ||
+      'https://http2.mlstatic.com/D_NQ_NP_686542-MLM42129488112_062020-W.jpg',
+    price: offer.prices.dayPrice.amount.display,
+  }));
+};

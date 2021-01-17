@@ -1,22 +1,21 @@
-import { createGlobalStyle, css, ThemeProps } from "styled-components"
-import ROBOTO_LIGHT_WOFF from "../../assets/font/Roboto-Light.woff"
-import ROBOTO_REGULAR_WOFF from "../../assets/font/Roboto-Medium.woff"
-import { Theme } from "./theme"
-
+import { createGlobalStyle, css, ThemeProps } from 'styled-components';
+import ROBOTO_LIGHT_WOFF from '../../assets/font/Roboto-Light.woff';
+import ROBOTO_REGULAR_WOFF from '../../assets/font/Roboto-Medium.woff';
+import { Theme } from './theme';
 
 export const fonts = css`
   @font-face {
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-weight: 300;
-    src: url(${ROBOTO_LIGHT_WOFF}) format("woff");
+    src: url(${ROBOTO_LIGHT_WOFF}) format('woff');
   }
 
   @font-face {
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-weight: 400;
-    src: url(${ROBOTO_REGULAR_WOFF}) format("woff");
+    src: url(${ROBOTO_REGULAR_WOFF}) format('woff');
   }
-`
+`;
 
 export const globalStyleCSS = css`
   ${fonts};
@@ -29,7 +28,7 @@ export const globalStyleCSS = css`
 
   html {
     font-size: 16px;
-    font-family: "Roboto", sans;
+    font-family: 'Roboto', sans;
     color: ${({ theme }) => theme.font.colors.primary};
     background-color: ${({ theme }) => theme.backgrounds.default};
   }
@@ -37,8 +36,8 @@ export const globalStyleCSS = css`
   body {
     margin: 0 auto;
   }
-`
+`;
 
 export const GlobalStyle = createGlobalStyle<ThemeProps<Theme>>`
   ${globalStyleCSS};
-`
+`;

@@ -1,21 +1,27 @@
 export type Theme = {
   backgrounds: {
-    default: string
-  }
+    default: string;
+    primary: string;
+    secondary: string;
+    terciary: string;
+  };
   font: {
     colors: {
-      primary: string
-    }
-  }
-}
+      primary: string;
+    };
+  };
+};
 
 export const theme: Theme = {
   backgrounds: {
-    default: "#fafafa",
+    default: '#fafafa',
+    primary: '#ffffff',
+    secondary: '#ff5f00',
+    terciary: '#191919',
   },
   font: {
     colors: {
-      primary: "#000000",
+      primary: '#191919',
     },
   },
-}
+};
