@@ -27,10 +27,31 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.(less|css)$/,
+        include: [
+          /[\\/]node_modules[\\/].*antd/, 
+          path.resolve(__dirname, "src")],
+        use: [
+          "style-loader", 
+          "css-loader", 
+          {
+            loader: "less-loader",
+            options: {
+              lessOptions: {
+                modifyVars: {
+                  'primary-color': '#ff5f00',
+                },
+                javascriptEnabled: true,
+              },
+            },
+          }
+        ],
+      },
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".tsx", ".ts", ".js", ".css"],
   },
   output: {
     filename: "bundle.js",

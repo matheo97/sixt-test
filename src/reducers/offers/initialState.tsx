@@ -5,5 +5,6 @@ export default {
   moreThan2Bags: false,
   numberOfSeats: 2,
   minAge: 18,
-  orderBy: 'popularity'
+  orderBy: 'popularity',
+  total: 63,
 };

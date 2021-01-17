@@ -22,6 +22,7 @@ declare namespace Sixt {
     numberOfSeats: number;
     minAge: number;
     orderBy: string;
+    total: number;
   }
   export interface Filters {
     automaticOnly?: boolean;

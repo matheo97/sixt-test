@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  position: relative;
   width: 100vw;
   height: 100vh;
 `;
@@ -92,8 +92,14 @@ export const FilterSection = styled.div`
   justify-content: center;
   width: 25%;
   height: 100%;
-  background-color: red;
-
+  position: relative;
+  .content {
+    position: absolute;
+    top: 4rem;
+    padding: 1.5rem;
+    height: fit-content;
+    width: 100%;
+  }
   @media (max-width: ${MOBILE}) {
     display: none;
   }
@@ -101,13 +107,20 @@ export const FilterSection = styled.div`
 
 export const CardSection = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
   width: 75%;
   height: 100%;
-  background-color: green;
-
+  .offers {
+    display: flex;
+    width: 100%;
+    height: 94%;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: center;
+    overflow-y: scroll;
+  }
   @media (max-width: ${MOBILE}) {
     width: 100%;
   }

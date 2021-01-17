@@ -8,7 +8,8 @@ const getOffers = (
   moreThan2Bags: boolean,
   numberOfSeats: number,
   minAge: number,
-  orderBy: string
+  orderBy: string,
+  page: number,
 ) => {
   const offers = getOffersAndFilter(
     automaticOnly,
@@ -16,12 +17,13 @@ const getOffers = (
     moreThan2Bags,
     numberOfSeats,
     minAge,
-    orderBy
+    orderBy,
+    page
   );
   return {
     type: GET_OFFERS,
     payload: {
-      listOfOffers: offers,
+      ...offers,
     },
   };
 };
@@ -29,10 +31,20 @@ const getOffers = (
 const updateFilters = (
   filters: Sixt.Filters
 ) => {
+  const offers = getOffersAndFilter(
+    filters.automaticOnly,
+    filters.mustHaveGPS,
+    filters.moreThan2Bags,
+    filters.numberOfSeats,
+    filters.minAge,
+    filters.orderBy,
+    1
+  );
   return {
     type: UPDATE_FILTERS,
     payload: {
-      ...filters
+      ...filters,
+      ...offers,
     },
   };
 };

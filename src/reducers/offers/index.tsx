@@ -3,7 +3,10 @@ import initState from './initialState';
 import Sixt from '../../types';
 
 interface Payload {
-  listOfOffers: [];
+  offers: {
+    listOfOffers: [],
+    total: number,
+  };
   filters: {
     automaticOnly?: boolean;
     mustHaveGPS?: boolean;
@@ -22,9 +25,7 @@ const offersReducer = (
     case actions.GET_OFFERS:
       return {
         ...state,
-        listOfOffers: [
-          ...payload.listOfOffers,
-        ]
+        ...payload,
       };
     case actions.UPDATE_FILTERS:
       return {
