@@ -30,11 +30,11 @@ export const globalStyleCSS = css`
     font-size: 16px;
     font-family: 'Roboto', sans;
     color: ${({ theme }) => theme.font.colors.primary};
-    background-color: ${({ theme }) => theme.backgrounds.default};
   }
 
   body {
     margin: 0 auto;
+    background-color: ${({ theme }) => theme.backgrounds.default};
   }
 `;
 

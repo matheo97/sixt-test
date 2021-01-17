@@ -8,7 +8,8 @@ export const Container = styled.div`
   justify-content: center;
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: fit-content;
+  background-color: ${({ theme }) => theme.backgrounds.default}
 `;
 
 export const Header = styled.div`
@@ -26,15 +27,21 @@ export const Header = styled.div`
     justify-content: flex-start;
     height: 6rem;
     width: 75rem;
-    padding: 1rem;
+    padding: .2rem;
     background-color: ${({ theme }) => theme.backgrounds.terciary};
     @media (max-width: ${TABLET}) {
       width: 100%;
     }
   }
   img {
-    width: 5.5rem;
-    height: 2.5rem;
+    width: 7.5rem;
+    height: 4.5rem;
+  }
+  @media (max-width: ${TABLET}) {
+    height: 5.5rem;
+  }
+  @media (max-width: ${MOBILE}) {
+    height: 5rem;
   }
 `;
 
@@ -70,6 +77,12 @@ export const SubHeader = styled.div`
       }
     }
   }
+  @media (max-width: ${TABLET}) {
+    height: 4rem;
+  }
+  @media (max-width: ${MOBILE}) {
+    height: 3.5rem;
+  }
 `;
 
 export const ContentContainer = styled.div`
@@ -79,7 +92,7 @@ export const ContentContainer = styled.div`
   justify-content: flex-start;
   width: 75rem;
   height: 100%;
-  background-color: white;
+  background-color: ${({ theme }) => theme.backgrounds.default};
   @media (max-width: ${TABLET}) {
     width: 100%;
   }
@@ -91,7 +104,7 @@ export const FilterSection = styled.div`
   align-items: flex-start;
   justify-content: center;
   width: 25%;
-  height: 100%;
+  height: 50.69rem;
   position: relative;
   .content {
     position: absolute;
@@ -115,13 +128,25 @@ export const CardSection = styled.div`
   .offers {
     display: flex;
     width: 100%;
-    height: 94%;
+    height: fit-content;
     flex-flow: row wrap;
-    align-items: flex-start;
-    justify-content: center;
-    overflow-y: scroll;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 48.75rem;
+    @media (max-width: ${MOBILE}) {
+    width: 100%;
+    min-height: 100%;
+    .pagination {
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+    }
+  }
   }
   @media (max-width: ${MOBILE}) {
     width: 100%;
+    .pagination {
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+    }
   }
 `;

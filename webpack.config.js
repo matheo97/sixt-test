@@ -6,7 +6,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|gif|woff|woff2)$/i,
+        test: /\.(png|jpg|jpeg|gif|woff|woff2)$/i,
         use: [
           {
             loader: "url-loader",

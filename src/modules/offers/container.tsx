@@ -60,7 +60,7 @@ const Offers = () => {
         page
       )
     );
-  }
+  };
 
   return (
     <Container>
@@ -72,7 +72,7 @@ const Offers = () => {
       <SubHeader>
         <div className='content'>
           <Typography appearance='title' as='h1'>
-            17 Offers
+            {total} Offers
           </Typography>
           <div className='filters'>
             <FilterOutlined
@@ -104,7 +104,7 @@ const Offers = () => {
             {listOfOffers.map((offer) => (
               <Card
                 hoverable
-                style={{ width: 240, height: 220, margin: 10 }}
+                style={{ width: 240, height: 240, margin: 10 }}
                 cover={
                   <img
                     alt='car image'
@@ -114,7 +114,10 @@ const Offers = () => {
                   />
                 }
               >
-                <Meta title={offer.name} description={`$ ${offer.price} day`} />
+                <Meta
+                  title={offer.name}
+                  description={`$ ${offer.price} per day`}
+                />
               </Card>
             ))}
           </div>
@@ -122,6 +125,7 @@ const Offers = () => {
             defaultPageSize={9}
             total={total}
             onChange={onChangePagination}
+            className='pagination'
           />
         </CardSection>
       </ContentContainer>
