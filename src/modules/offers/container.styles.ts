@@ -9,7 +9,7 @@ export const Container = styled.div`
   position: relative;
   width: 100vw;
   height: fit-content;
-  background-color: ${({ theme }) => theme.backgrounds.default}
+  background-color: ${({ theme }) => theme.backgrounds.default};
 `;
 
 export const Header = styled.div`
